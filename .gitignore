@@ -1,0 +1,14 @@
+venv
+*.pyc
+__pycache__
+dist
+*.egg-info
+build/
+dist/
+Watch
+htmlcov
+.coverage
+.DS_Store
+htmlcov
+.coverage
+.env
