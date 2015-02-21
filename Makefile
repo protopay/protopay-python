@@ -11,4 +11,4 @@ test:
 venv:
 	virtualenv venv
 	. venv/bin/activate; pip install -r requirements.txt -r tests/requirements.txt
-	echo 'alias yo="python -m yollapay --auth=test_firstdata_xxxxxxxxxxxx --url https://yollapay-staging.herokuapp.com/v1 "' >> venv/bin/activate
+	echo 'alias pay="python -m protopay --auth=test_firstdata_xxxxxxxxxxxx --url https://protopay-staging.herokuapp.com/v1 "' >> venv/bin/activate

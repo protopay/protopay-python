@@ -1,6 +1,6 @@
 [run]
 branch=True
-source=yollapay
+source=protopay
 
 [report]
 exclude_lines =

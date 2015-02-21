@@ -7,7 +7,7 @@ from urllib import urlencode
 version = VERSION = __version__ = '0.0.1'
 
 
-class Yollapay(object):
+class protopay(object):
     def __init__(self, args):
         self.args = dict(auth=args.auth, url=args.url,
                          func=None, json=args.json)
@@ -29,7 +29,7 @@ class Yollapay(object):
         query = ("?%s"%urlencode(query)) if query else ""
 
         res = getattr(requests, method)("/".join([self.url]+map(str,endpoint)) + ext + query,
-                                        headers={"User-Agent": "Yollapay v%s"%version, "Authorization": "token %s"%self.auth},
+                                        headers={"User-Agent": "protopay v%s"%version, "Authorization": "token %s"%self.auth},
                                         data=body)
         return res
 
@@ -41,11 +41,14 @@ class Yollapay(object):
     def charges(self):
         return self._fetch('get', ('charges', ))
 
+    def charges_complete(self, id, tip=None):
+        return self._fetch('put', ('charges', id[0]), body=dict(tip=tip))
+
     def requests(self):
         return self._fetch('get', ('requests', ))
 
     def help(self):
-        sys.stdout.write(Yollapay.__doc__)
+        sys.stdout.write(protopay.__doc__)
 
     def test(self, number, exp_month, exp_year):
         """run tests on an account

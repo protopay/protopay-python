@@ -15,7 +15,7 @@ classifiers = ["Development Status :: 4 - Beta",
 
 requirements = ["requests>=2.3.0"]
 
-setup(name='yollapay',
+setup(name='protopay',
       version='0.0.1',
       description="",
       long_description=None,
@@ -23,9 +23,9 @@ setup(name='yollapay',
       keywords='',
       author='',
       author_email='steve@stevepeak.net',
-      url='http://github.com/yollapay/yollapay',
-      packages=['yollapay'],
+      url='http://github.com/protopay/protopay-python',
+      packages=['protopay'],
       include_package_data=True,
       zip_safe=True,
       install_requires=requirements,
-      entry_points={'console_scripts': ['tyollapay=yollapay:main']})
+      entry_points={'console_scripts': ['protopay=protopay:main']})
